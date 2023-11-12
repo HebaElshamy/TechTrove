@@ -27,7 +27,7 @@
                     <div class="form-group">
                         <label for="inputStatus">Status *</label>
                         <select id="inputStatus" class="form-control custom-select" name="status">
-                            <option selected disabled>Select one</option>
+                            <option selected disabled>Select Status</option>
                             <option value="hold">Holding</option>
                             <option value="canceled">Canceled</option>
                             <option value="available">Available</option>

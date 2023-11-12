@@ -23,7 +23,7 @@
                                   <div class="form-group">
                                       <label for="inputStatus" style="font-weight: 100  !important">Status</label>
                                       <select id="inputStatus" class="form-control custom-select" name="status">
-                                      <option selected disabled>Select one</option>
+                                      <option selected disabled>Select Status</option>
                                       @if ($category->status == 'hold')
                                         <option selected value="hold">Holding</option>
                                         <option value="canceled">Canceled</option>

@@ -9,12 +9,16 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>One fine body&hellip;</p>
-        </div>
-        <div class="modal-footer justify-content-between">
-          <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-outline-light">Save changes</button>
-        </div>
+            <p>Are you sure you want to scan this product?</p>
+          </div>
+          <form action="{{route('destroy.product',$product->id)}}" method="post">
+              <div class="modal-footer justify-content-between">
+                      @csrf
+                      @method('DELETE')
+                      <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-outline-light">Delete</button>
+              </div>
+          </form>
       </div>
       <!-- /.modal-content -->
     </div>

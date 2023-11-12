@@ -5,72 +5,85 @@
 @section('head_title','Edit Product')
 @section('active','Edit Product')
 @section('content')
-
-<form action="{{route('store.product')}}" method="POST" enctype="multipart/form-data">
+@include('Admin.includes.errors')
+<form action="{{route('update.product',$product->id)}}" method="POST" enctype="multipart/form-data">
     @csrf
+    @method('PUT')
     <div class="card card-primary ">
         <div class="card-body">
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
-                        <label for="inputName">Product Name</label>
-                        <input type="text" id="inputName" name="name" class="form-control">
+                        <label for="inputName">Product Name *</label>
+                        <input type="text" id="inputName" name="name" class="form-control" value="{{$product->name}}">
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-group">
                         <label for="inputDescription">Product Description</label>
-                        <textarea id="inputDescription" class="form-control" name="description" rows="4"></textarea>
+                        <textarea id="inputDescription" class="form-control" name="description" rows="4">{{$product->description}}</textarea>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="inputStatus">Status</label>
+                        <label for="inputStatus">Status *</label>
                         <select id="inputStatus" class="form-control custom-select" name="status">
-                            <option selected disabled>Select one</option>
-                            <option value="hold">On Hold</option>
+                            <option  disabled>Select Status</option>
+                            @if ($product->status == 'hold')
+                            <option selected value="hold">Holding</option>
                             <option value="canceled">Canceled</option>
                             <option value="available">Available</option>
-                            <option value="in_stock">In Stock</option>
-                            <option value="out_stock">Out Stock</option>
+                           @elseif ($product->status == 'canceled')
+                           <option  value="hold">Holding</option>
+                           <option selected value="canceled">Canceled</option>
+                           <option value="available">Available</option>
+                           @elseif ($product->status == 'available')
+                           <option  value="hold">Holding</option>
+                           <option  value="canceled">Canceled</option>
+                           <option selected value="available">Available</option>
+                          @endif
                         </select>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="inputStatus">Category</label>
+                        <label for="inputStatus">Category *</label>
                         <select id="inputStatus" class="form-control custom-select" name="category">
-                            <option selected disabled>Select Category</option>
+                            <option  disabled>Select Category</option>
                             @foreach ($categories as $category)
-                                <option value="{{$category->id}}">{{$category->name}}</option>
+
+                                <option @if ($category->id ==$product->category_id)
+                                    selected
+                                @endif
+                                value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
-                                <option value="0">General</option>
+
 
                         </select>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="inputClientCompany">Stock</label>
-                        <input type="number" id="inputClientCompany" name="stock" class="form-control">
+                        <label for="inputClientCompany">Stock *</label>
+                        <input type="number" id="inputClientCompany" name="stock" class="form-control" value="{{$product->stock}}">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="inputClientCompany">Min Stock</label>
-                        <input type="number" id="inputClientCompany" name="min_stock" class="form-control">
+                        <label for="inputClientCompany">Min Stock *</label>
+                        <input type="number" id="inputClientCompany" name="min_stock" class="form-control" value="{{$product->min_stock}}">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="inputProjectLeader">Price</label>
-                        <input type="number" id="inputProjectLeader" name="price" class="form-control">
+                        <label for="inputProjectLeader">Price *</label>
+                        <input type="number" id="inputProjectLeader" name="price" class="form-control"value="{{$product->price}}">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="inputProjectLeader">Discount</label>
-                        <input type="number" id="inputProjectLeader" name="discount"class="form-control">
+                        <label for="inputProjectLeader">Discount *</label>
+                        <input type="number" id="inputProjectLeader" name="discount"class="form-control"value="{{$product->discount}}">
                     </div>
                 </div>
                 <div class="col-6">

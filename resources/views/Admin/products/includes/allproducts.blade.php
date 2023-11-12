@@ -16,7 +16,7 @@
     <td>
       <ul class="table-controls d-flex justify-content-around list-unstyled ">
           <li style="font-size: 1.3rem">
-              <a href="{{route('show.product',1)}}" class="text-primary" >
+              <a href="{{route('show.product',$product->id)}}" class="text-primary" >
 
                   <i class="fas fa-folder"></i>
 
@@ -24,7 +24,7 @@
 
           </li>
           <li style="font-size: 1.3rem">
-              <a href="{{route('edit.product',1)}}" class="text-success ">
+              <a href="{{route('edit.product',$product->id)}}" class="text-success ">
 
                   <i class="fas fa-pencil-alt"></i>
 

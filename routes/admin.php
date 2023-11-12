@@ -36,6 +36,6 @@ Route::post('/product', [ProductController::class,'store'])->name('store.product
 Route::get('/product/{id}', [ProductController::class,'edit'])->name('edit.product');
 Route::get('/oneproduct/{id}', [ProductController::class,'show'])->name('show.product');
 Route::put('/product/{id}', [ProductController::class,'update'])->name('update.product');
-Route::delete('/products/{id}', [ProductController::class,'destroy'])->name('destroy.product');
+Route::delete('/deleteproduct/{id}', [ProductController::class,'destroy'])->name('destroy.product');
 
 require __DIR__.'/auth.php';
