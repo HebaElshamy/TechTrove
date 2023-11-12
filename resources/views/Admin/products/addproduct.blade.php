@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
-                        <label for="inputName">Product Name</label>
+                        <label for="inputName">Product Name *</label>
                         <input type="text" id="inputName" name="name" class="form-control">
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="inputStatus">Status</label>
+                        <label for="inputStatus">Status *</label>
                         <select id="inputStatus" class="form-control custom-select" name="status">
                             <option selected disabled>Select one</option>
                             <option value="hold">Holding</option>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="inputStatus">Category</label>
+                        <label for="inputStatus">Category *</label>
                         <select id="inputStatus" class="form-control custom-select" name="category">
                             <option selected disabled>Select Category</option>
                             @forelse ( $categories as $category)
@@ -50,26 +50,26 @@
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="inputClientCompany">Stock</label>
+                        <label for="inputClientCompany">Stock *</label>
                         <input type="number" id="inputClientCompany" name="stock" class="form-control">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="inputClientCompany">Min Stock</label>
-                        <input type="number" id="inputClientCompany" name="min_stock" class="form-control">
+                        <label for="inputClientCompany">Min Stock *</label>
+                        <input type="number" id="inputClientCompany" name="min_stock" class="form-control" value="0">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="inputProjectLeader">Price</label>
+                        <label for="inputProjectLeader">Price *</label>
                         <input type="number" id="inputProjectLeader" name="price" class="form-control">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="inputProjectLeader">Discount</label>
-                        <input type="number" id="inputProjectLeader" name="discount"class="form-control">
+                        <label for="inputProjectLeader">Discount *</label>
+                        <input type="number" id="inputProjectLeader" name="discount"class="form-control" value="0">
                     </div>
                 </div>
                 <div class="col-6">

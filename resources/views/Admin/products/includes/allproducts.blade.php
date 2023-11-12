@@ -2,7 +2,14 @@
 <tr>
     <td>{{$key+1}}</td>
     <td>{{$product->name}}</td>
-    <td>{{$product->status}}</td>
+    @if ($product->status =='hold')
+            <td ><span class="badge badge-warning ">Holding</span></td>
+        @elseif ($product->status =='available')
+            <td ><span class="badge badge-success ">Aavailable</span></td>
+        @elseif ($product->status =='canceled')
+            <td ><span class="badge badge-danger ">Canceled</span></td>
+        @endif
+
     <td>{{$product->stock}}</td>
     <td>{{$product->price}}</td>
     <td>{{$product->category->name}}</td>
