@@ -31,8 +31,11 @@ Route::put('/categories/{id}', [CategoryController::class,'update'])->name('upda
 Route::delete('/categories/{id}', [CategoryController::class,'destroy'])->name('destroy.category');
 //Product Route
 Route::get('/products', [ProductController::class,'index'])->name('all.product');
-Route::post('/products', [CategoryController::class,'store'])->name('store.product');
-Route::put('/products/{id}', [CategoryController::class,'update'])->name('update.product');
-Route::delete('/products/{id}', [CategoryController::class,'destroy'])->name('destroy.product');
+Route::get('/product', [ProductController::class,'create'])->name('add.product');
+Route::post('/product', [ProductController::class,'store'])->name('store.product');
+Route::get('/product/{id}', [ProductController::class,'edit'])->name('edit.product');
+Route::get('/oneproduct/{id}', [ProductController::class,'show'])->name('show.product');
+Route::put('/product/{id}', [ProductController::class,'update'])->name('update.product');
+Route::delete('/products/{id}', [ProductController::class,'destroy'])->name('destroy.product');
 
 require __DIR__.'/auth.php';

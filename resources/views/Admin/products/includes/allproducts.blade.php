@@ -8,20 +8,20 @@
     <td>
       <ul class="table-controls d-flex justify-content-around list-unstyled ">
           <li style="font-size: 1.3rem">
-              <a href="" class="text-primary" data-toggle="modal" data-target="#modal-view{{$product->id}}">
+              <a href="{{route('show.product',1)}}" class="text-primary" >
 
                   <i class="fas fa-folder"></i>
 
               </a>
-              @include('Admin.products.includes.viewproduct')
+
           </li>
           <li style="font-size: 1.3rem">
-              <a href="" class="text-success " data-toggle="modal" data-target="#modal-edit{{$product->id}}">
+              <a href="{{route('edit.product',1)}}" class="text-success ">
 
                   <i class="fas fa-pencil-alt"></i>
 
               </a>
-              @include('Admin.products.includes.editproduct')
+
 
           </li>
           <li style="font-size: 1.3rem">

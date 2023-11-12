@@ -18,8 +18,8 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->double('price',8,2);
             $table->integer('stock');
-            $table->integer('min_stock');
-            $table->text('gallery');
+            $table->integer('min_stock')->default(0);
+            $table->text('gallery')->nullable();
             $table->double('discount')->default(0);
             $table->enum('status', ['hold', 'available','canceled','in_stock','out_stock'])->default('hold');
             $table->timestamps();

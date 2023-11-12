@@ -9,7 +9,17 @@
 <div class="row">
     @include('Admin.includes.errors')
     <div class="col-12">
-        @include('Admin.products.includes.addproduct')
+        <div class="card card-primary collapsed-card">
+
+            <div class="card-header">
+              <h3 class="card-title">Add Product</h3>
+              <div class="card-tools">
+                <a href="{{route('add.product')}}"  class="btn btn-tool" >
+                  <i class="fas fa-plus"></i>
+                </a>
+              </div>
+            </div>
+        </div>
     </div>
     <div class="col-12">
         <div class="card">
