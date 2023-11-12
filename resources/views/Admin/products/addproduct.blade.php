@@ -5,7 +5,7 @@
 @section('head_title','Add Product')
 @section('active','Add Product')
 @section('content')
-
+@include('Admin.includes.errors')
 <form action="{{route('store.product')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="card card-primary ">
@@ -40,11 +40,12 @@
                     <div class="form-group">
                         <label for="inputStatus">Category</label>
                         <select id="inputStatus" class="form-control custom-select" name="category">
-                                <option selected disabled>Select Category</option>
-                            @foreach ($categories as $category)
+                            <option selected disabled>Select Category</option>
+                            @forelse ( $categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
-                            @endforeach
-                                <option value="0">General</option>
+                            @empty
+                                    <option disabled>No Categories Yet</option>
+                            @endforelse
                         </select>
                     </div>
                 </div>

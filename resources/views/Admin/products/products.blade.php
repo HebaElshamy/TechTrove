@@ -30,19 +30,16 @@
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Product Name</th>
-                  <th>Status</th>
-                  <th>Stock</th>
-                  <th>Action</th>
-                </tr>
+                    <th>#</th>
+                    <th>Product Name</th>
+                    <th>Status</th>
+                    <th>Stock</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Action</th>
                 </thead>
                 <tbody>
                     @include('Admin.products.includes.allproducts')
-
-
-
                 </tbody>
                 <tfoot>
                     <tr>
@@ -50,6 +47,8 @@
                         <th>Product Name</th>
                         <th>Status</th>
                         <th>Stock</th>
+                        <th>Price</th>
+                        <th>Category</th>
                         <th>Action</th>
                       </tr>
                 </tfoot>

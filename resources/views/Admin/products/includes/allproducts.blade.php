@@ -1,10 +1,11 @@
 @forelse ($products as $key =>$product)
 <tr>
     <td>{{$key+1}}</td>
-    <td>InternetExplorer 4.0</td>
-    <td>Win 95+</td>
-    <td>
-    </td>
+    <td>{{$product->name}}</td>
+    <td>{{$product->status}}</td>
+    <td>{{$product->stock}}</td>
+    <td>{{$product->price}}</td>
+    <td>{{$product->category->name}}</td>
     <td>
       <ul class="table-controls d-flex justify-content-around list-unstyled ">
           <li style="font-size: 1.3rem">
