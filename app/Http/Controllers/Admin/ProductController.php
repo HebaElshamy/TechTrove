@@ -20,11 +20,11 @@ class ProductController extends Controller
     }
     public function store(Request $request){
         // dd($request->all());
-        
+
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'status' => 'required|in:hold,available,canceled,in_stock,out_stock',
+            'status' => 'required|in:hold,available,canceled',
             'stock' => 'required|integer|min:0',
             'min_stock' => 'nullable|integer|min:0',
             'discount' => 'nullable|numeric|min:0',

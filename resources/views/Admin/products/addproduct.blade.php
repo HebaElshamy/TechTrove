@@ -28,11 +28,10 @@
                         <label for="inputStatus">Status</label>
                         <select id="inputStatus" class="form-control custom-select" name="status">
                             <option selected disabled>Select one</option>
-                            <option value="hold">On Hold</option>
+                            <option value="hold">Holding</option>
                             <option value="canceled">Canceled</option>
                             <option value="available">Available</option>
-                            <option value="in_stock">In Stock</option>
-                            <option value="out_stock">Out Stock</option>
+
                         </select>
                     </div>
                 </div>
