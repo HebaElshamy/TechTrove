@@ -37,9 +37,9 @@
         </td>
     </tr>
 @empty
-    <tr>
-        <td colspan="5" style="font-size: 1.5rem;color: #dc3545" >No Categories Yet</td>
-    </tr>
+<tr class="odd">
+    <td style="color:  #dc3545" valign="top" colspan="7" class="dataTables_empty">No category available in table</td>
+</tr>
 
 
 @endforelse
